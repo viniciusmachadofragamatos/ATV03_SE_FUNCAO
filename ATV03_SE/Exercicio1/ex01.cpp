@@ -36,10 +36,25 @@ void loop() {
   
   Serial.print("Media: ");
   Serial.print(media);
-  Serial.print("Media Arredondada");
+  
+  Serial.print("Media Arredondada (round) :");
   Serial.println(round(media));
+
+  
+  Serial.print("Media Arredondada para baixo (floor) :");
+  Serial.println(floor(media));
+
+  
+  Serial.print("Media Arredondada para cima (ceil):");
+  Serial.println(ceil(media));
+  
   Serial.print("Raiz quadrada da media: ");
   Serial.println(ceil(raiz));
-
+  
+  Serial.print("Raiz quadrada da media: ");
+  Serial.println(quadrado));
+  
+  Serial.println("--------------------------------------\n");
   delay(2000);
 }
+
