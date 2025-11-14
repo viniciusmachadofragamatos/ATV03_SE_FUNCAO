@@ -52,9 +52,10 @@ void loop() {
   Serial.println(ceil(raiz));
   
   Serial.print("Raiz quadrada da media: ");
-  Serial.println(quadrado));
+  Serial.println(quadrado);
   
   Serial.println("--------------------------------------\n");
   delay(2000);
 }
+
 
