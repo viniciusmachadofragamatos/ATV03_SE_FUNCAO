@@ -1,4 +1,5 @@
 char texto[50];
+char saudacao[100];  // Aumentei o tamanho para garantir que caiba a saudação + palavra
 
 void setup() {
   Serial.begin(9600);
@@ -13,6 +14,7 @@ void loop() {
     Serial.print("Tamanho da palavra: ");
     Serial.println(strlen(texto));
 
+    // Converte para maiúsculas
     for (int i = 0; i < strlen(texto); i++) {
       texto[i] = toupper(texto[i]);
     }
@@ -20,9 +22,16 @@ void loop() {
     Serial.print("Em maiusculas: ");
     Serial.println(texto);
 
-    char saudacao[60] = "Ola, ";
+    // Cria a saudação
+    strcpy(saudacao, "Ola, ");
     strcat(saudacao, texto);
     strcat(saudacao, "!");
-    Serial.println(saudacao);
+    
+    // Garante que a saudação não ultrapasse o limite do buffer
+    if (strlen(saudacao) < sizeof(saudacao)) {
+      Serial.println(saudacao);
+    } else {
+      Serial.println("Saudacao muito longa!");
+    }
   }
 }
